@@ -28,9 +28,11 @@ public class BuildingServiceTest {
 		System.out.println("test add building");
 		Building building = new Building();
 		building.setBuildingNum("1");
+		System.out.println(building.toString());
 		count = buildingService.addBuilding(building);
+		Building building2 = buildingService.findBuildingByNum("1");
 		if (count > 0) {
-			System.out.println("ok");
+			System.out.println(building2.toString());
 		}
 	}
 	

@@ -13,4 +13,12 @@ public class Building {
 	public String getBuildingNum() {
 		return buildingNum;
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "楼层数：" + getBuildingNum() + "\n";
+	}
+	
+	
 }

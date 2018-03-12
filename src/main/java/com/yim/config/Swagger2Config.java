@@ -9,14 +9,16 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
 *@author:   yim
 *@date:  2018年3月12日下午12:12:29
-*@decription:   public class Swagger2Config{ }
+*@decription:   api文档插件配置
 */
 
 @Configuration
+@EnableSwagger2
 public class Swagger2Config {
 
 	@Bean

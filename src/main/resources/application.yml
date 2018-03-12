@@ -26,11 +26,11 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: oInayChen*2HUI
     filters: stat
-    maxActive: 20
+    maxActive: 50
     initialSize: 1
     maxWait: 60000
     minIdle: 1
@@ -63,3 +63,28 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+#邮件插件配置
+mail:
+  smtp:
+    auth: true
+    port: 465
+    timeout: 5000
+  auth:
+    name: xx@163.com
+    password: 
+  transport:
+    protocol: smtp
+  is:
+    ssl: true
+  host: smtp.163.com
+  send:
+    charset: UTF-8
+
+#log4j插件配置
+log4j:
+  rootCategory: INFO, stdout
+  appender:
+    stdout: org.apache.log4j.ConsoleAppender
+      layout: org.apache.log4j.PatternLayout
+        ConversionPattern: %d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
