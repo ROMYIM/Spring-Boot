@@ -1,0 +1,65 @@
+#spring.http.encoding.charset = UTF-8
+#server.tomact.uri-encoding = UTF-8
+
+#spring.datasource.url = jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+#spring.datasource.username = root
+#spring.datasource.password = 123456
+#spring.datasource.driverClassName = com.mysql.jdbc.Driver
+
+#spring.jpa.datasource = MYSQL
+#spring.jpa.show-sql = true
+
+# create: every time load the hibernate will delete the table you created before, than create the new table according to your model class
+# create-drop: it will create the new table according to your model class when the hibernate loads every time. but the table will be deleted when the sessionFactory is closed 
+#spring.jpa.hibernate.ddl-atuo = update
+#spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImproveNamingStrategy
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      exclude: WEB-INF/**
+
+  thymeleaf: 
+    cache: false
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: oInayChen*2HUI
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+server:
+  port: 9090
+  context-path: /springboot/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yim.entity
+
+mapper: 
+  mapper:
+    identity: MYSQL
+    #mappers: com.yim.util.MyMapper
+    not-empty: false
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

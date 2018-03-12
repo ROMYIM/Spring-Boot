@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.yim.mapper.BuildingMapper">
+ 
+ 	<insert id="insertBuilding" parameterType="com.yim.entity.Building" >
+ 		insert into tb_building(building_num) values(#{buildingNum})
+ 	</insert>
+ 	
+ 	<delete id="deleteBuilding" parameterType="com.yim.entity.Building">
+ 		delete from tb_building where building_num = #{buildingNum}
+ 	</delete>
+ 	
+ 	<update id="updateBuilding" parameterType="com.yim.entity.Building">
+ 		update tb_building set building_num = #{buildingNum}
+ 	</update>
+ 	
+ 	<select id="selectBuildingByNum" parameterType="String" resultType="com.yim.entity.Building">
+ 		select * from tb_building where building_num = #{buildingNum}
+ 	</select>
+ 	
+ 	<select id="selectAllBuildings" resultType="com.yim.entity.Building">
+ 		select * from tb_building 
+ 	</select>
+ </mapper>
