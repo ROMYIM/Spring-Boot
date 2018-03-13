@@ -1,5 +1,7 @@
 package com.yim.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,8 @@ public class UserController {
 	
 	@Autowired
 	private IBuildingService buildingService;
+	
+	static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
 	public ResponseEntity<JsonResult> login(@ModelAttribute("JsonResult") JsonResult result, String id) {

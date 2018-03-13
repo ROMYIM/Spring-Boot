@@ -68,11 +68,11 @@ pagehelper:
 mail:
   smtp:
     auth: true
-    port: 465
+    port: 25
     timeout: 5000
   auth:
-    name: xx@163.com
-    password: 
+    name: 15818132731@163.com
+    password: cchyjr2u
   transport:
     protocol: smtp
   is:
@@ -80,11 +80,3 @@ mail:
   host: smtp.163.com
   send:
     charset: UTF-8
-
-#log4j插件配置
-log4j:
-  rootCategory: INFO, stdout
-  appender:
-    stdout: org.apache.log4j.ConsoleAppender
-      layout: org.apache.log4j.PatternLayout
-        ConversionPattern: %d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
