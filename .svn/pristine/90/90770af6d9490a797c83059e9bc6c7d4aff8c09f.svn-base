@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<properties resource="application.yml"/>
+	<classPathEntry  location="C:\Users\PC-001\.m2\repository\mysql\mysql-connector-java\5.1.41\mysql-connector-java-5.1.41.jar" />
+  <context id="springboot" targetRuntime="MyBatis3" defaultModelType="flat">
+  	<commentGenerator><property name="suppressAllComments" value="true" /></commentGenerator>
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/springboot" driverClass="com.mysql.jdbc.Driver" password="oInayChen*2HUI" userId="root" />
+    <javaModelGenerator targetPackage="com.yim.entity" targetProject="src/main/java" />
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+    <javaClientGenerator targetPackage="com.yim.mapper" targetProject="src/main/java" type="MIXEDMAPPER" />
+    <table  tableName="tb_course" domainObjectName="Cource">
+    	<generatedKey column="id" sqlStatement="MySql"/>
+      	<columnOverride column="name" property="name" javaType="String" jdbcType="varchar" />
+      	<columnOverride column="score" property="score" javaType="String" jdbcType="varchar"/>
+    </table>
+  </context>
+</generatorConfiguration>

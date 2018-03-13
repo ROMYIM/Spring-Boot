@@ -1,23 +1,10 @@
 package com.yim.entity;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
-@ApiModel(value = "User", description = "用户对象user")
 public class User {
-	@ApiModelProperty(value = "用户id", name = "id", dataType = "String", required = true)
 	private String id;
-	
-	@ApiModelProperty(value = "用户姓名", name = "name", dataType = "String", required = true)
 	private String name;
-	
-	@ApiModelProperty(value = "用户性别", name = "gender", dataType = "String", required = true)
 	private String gender;
-	
-	@ApiModelProperty(value = "用户生日", name = "birthday", dataType = "String", required = true)
 	private String birthday;
-	
-	@ApiModelProperty(value = "用户地址", name = "address", dataType = "String", required = false)
 	private String address;
 	
 	public void setId(String id) {
